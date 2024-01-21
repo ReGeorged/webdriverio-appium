@@ -57,7 +57,8 @@ export const config = {
         'appium:deviceName': 'Pixel 3a API 34',
         'appium:platformVersion': '14.0',
         'appium:automationName': 'UiAutomator2',
-        'appium:app': path.join(process.cwd(), './app/android/bloomberk.apk'),
+        'appium:app': path.join(process.cwd(), './app/android/bloomberg.apk'),
+        "appium:autoGrantPermissions": true
     }],
 
     //

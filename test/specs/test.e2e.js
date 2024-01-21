@@ -4,7 +4,7 @@ import SecurePage from '../pageobjects/secure.page.js'
 
 describe('My Login application', () => {
     it('should login with valid credentials', async () => {
-        await driver.pause(3000);
+        await driver.pause(30000);
     })
 })
 
