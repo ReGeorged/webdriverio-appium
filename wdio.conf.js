@@ -59,7 +59,8 @@ export const config = {
         'appium:platformVersion': '14.0',
         'appium:automationName': 'UiAutomator2',
         'appium:app': path.join(process.cwd(), './app/android/bloomberg.apk'),
-        "appium:autoGrantPermissions": true
+        "appium:autoGrantPermissions": true,
+        "appium:recordVideo": true
     }],
 
     //
