@@ -1,4 +1,5 @@
 class HomeScreen {
+    
     get uniqueLocator() {
         let uniqueElement = $('//android.widget.TextView[@text="News"]');
         uniqueElement.waitForDisplayed();

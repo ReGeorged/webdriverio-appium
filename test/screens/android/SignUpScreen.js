@@ -1,4 +1,5 @@
 class SignUpScreen{
+    
     get uniquerLocator(){  
         let uniqueElement = $('~Create an Account');
         uniqueElement.waitForDisplayed();

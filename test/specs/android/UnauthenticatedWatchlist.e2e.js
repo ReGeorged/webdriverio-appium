@@ -1,9 +1,8 @@
-import HomeScreen from "../../../screens/HomeScreen.js"
-import PopupOfferScreen from "../../../screens/PopupOfferScreen.js"
-import BottomNavigationScreenPage from "../../../screens/BottomNavigationScreen.page.js";
-import WatchListScreen from "../../../screens/WatchListScreen.js";
-import SignUpScreen from "../../../screens/SignUpScreen.js";
-
+import HomeScreen from "../../screens/android/HomeScreen.js"
+import PopupOfferScreen from "../../screens/android/PopupOfferScreen.js"
+import BottomNavigationScreenPage from "../../screens/android/BottomNavigationScreen.page.js"
+import WatchListScreen from "../../screens/android/WatchListScreen.js"
+import SignUpScreen from "../../screens/android/SignUpScreen.js"
 describe('Navigate to Watchlist and proceed to Sign Up Screen', () => {
     before(async () => {
         await PopupOfferScreen.declineOfferIfVisible();

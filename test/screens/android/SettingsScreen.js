@@ -6,8 +6,6 @@ class SettingsScreen {
     get restoreSubscriptionButton() {
         return $('~Restore Subscription, ')
     }
-
-
 }
 
 export default new SettingsScreen();

@@ -1,5 +1,5 @@
-import HomeScreen from "../../../screens/HomeScreen.js"
-import PopupOfferScreen from "../../../screens/PopupOfferScreen.js"
+import HomeScreen from "../../screens/android/HomeScreen.js"
+import PopupOfferScreen from "../../screens/android/PopupOfferScreen.js"
 
 describe('Navigate to home page and assert that Article/topic is not empty', () => {
     before(async () => {

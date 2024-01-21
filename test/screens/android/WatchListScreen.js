@@ -6,7 +6,7 @@ class WatchListScreen {
         return uniqueElement;
     }
 
-    get registerToUseWatchlistButton(){
+    get registerToUseWatchlistButton() {
         let registerToUseWatchlistButton = $('~REGISTER TO CREATE A WATCHLIST');
         registerToUseWatchlistButton.waitForDisplayed();
         return registerToUseWatchlistButton;

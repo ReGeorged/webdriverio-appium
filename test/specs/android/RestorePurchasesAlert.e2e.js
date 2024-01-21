@@ -1,10 +1,10 @@
-import MenuNavigationBarScreen from "../../screens/MenuNavigationBarScreen.js";
-import MenuScreen from "../../screens/MenuScreen.js";
-import BottomNavigationScreen from "../../screens/BottomNavigationScreen.page.js";
-import HomeScreen from "../../screens/HomeScreen.js"
-import PopupOfferScreen from "../../screens/PopupOfferScreen.js"
-import SettingsScreen from "../../screens/SettingsScreen.js"
-import AlertScreen from "../../screens/AlertScreen.js";
+import MenuNavigationBarScreen from "../../screens/android/MenuNavigationBarScreen.js";
+import MenuScreen from "../../screens/android/MenuScreen.js";
+import BottomNavigationScreen from "../../screens/android/BottomNavigationScreen.page.js";
+import HomeScreen from "../../screens/android/HomeScreen.js"
+import PopupOfferScreen from "../../screens/android/PopupOfferScreen.js"
+import SettingsScreen from "../../screens/android/SettingsScreen.js"
+import AlertScreen from "../../screens/android/AlertScreen.js";
 
 describe('Should Navigate To Settings > Restore Subscription and Validate Error Message ', () => {
   before(async () => {

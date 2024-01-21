@@ -11,7 +11,6 @@ class MenuNavigationBarScreen {
         settingsButton.waitForDisplayed();
         return settingsButton;
     }
-
 }
 
 export default new MenuNavigationBarScreen();
