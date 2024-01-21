@@ -11,3 +11,4 @@ npx allure generate allure-results && npx allure open
 npx allure generate allure-results --clean
 npx allure open
 ```
+![Screenshot](allure.png)
