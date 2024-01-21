@@ -1,4 +1,5 @@
-import allure  from 'allure-commandline'
+import allure from 'allure-commandline'
+import video from 'wdio-video-reporter';
 import path from 'path';
 export const config = {
     //
@@ -24,7 +25,7 @@ export const config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/**/RestorePurchasesAlert.e2e.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -59,8 +60,7 @@ export const config = {
         'appium:platformVersion': '14.0',
         'appium:automationName': 'UiAutomator2',
         'appium:app': path.join(process.cwd(), './app/android/bloomberg.apk'),
-        "appium:autoGrantPermissions": true,
-        "appium:recordVideo": true
+        "appium:autoGrantPermissions": true
     }],
 
     //
@@ -111,15 +111,15 @@ export const config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     services: [
-        
-        
-        ['appium',{
-        args:{
-            address: 'localhost',
-            port: 4723
-        }
-    }]
-],
+
+
+        ['appium', {
+            args: {
+                address: 'localhost',
+                port: 4723
+            }
+        }]
+    ],
 
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -128,7 +128,7 @@ export const config = {
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
     framework: 'mocha',
-    
+
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
@@ -143,11 +143,15 @@ export const config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: ['spec',
-    ['allure', {
-        outputDir: 'allure-results',
-        disableWebdriverStepsReporting: false,
-        disableWebdriverScreenshotsReporting: false,
-    }]],
+        ['allure', {
+            outputDir: 'allure-results',
+            disableWebdriverStepsReporting: false,
+            disableWebdriverScreenshotsReporting: false,
+        }],
+        [video, {
+            saveAllVideos: false,       // If true, also saves videos for successful test cases
+            videoSlowdownMultiplier: 3, // Higher to get slower videos, lower for faster videos [Value 1-100]
+        }]],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -250,7 +254,7 @@ export const config = {
      * @param {boolean} result.passed    true if test has passed, otherwise false
      * @param {object}  result.retries   information about spec related retries, e.g. `{ attempts: 0, limit: 0 }`
      */
-    afterTest: async function(test, context, { error, result, duration, passed, retries }) {
+    afterTest: async function (test, context, { error, result, duration, passed, retries }) {
         if (error) {
             await driver.takeScreenshot();
         }
@@ -297,7 +301,7 @@ export const config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-    onComplete: function(exitCode, config, capabilities, results) {
+    onComplete: function (exitCode, config, capabilities, results) {
 
         const reportError = new Error('Could not generate Allure report')
         const generation = allure(['generate', 'allure-results', '--clean'])
@@ -306,7 +310,7 @@ export const config = {
                 () => reject(reportError),
                 5000)
 
-            generation.on('exit', function(exitCode) {
+            generation.on('exit', function (exitCode) {
                 clearTimeout(generationTimeout)
 
                 if (exitCode !== 0) {
