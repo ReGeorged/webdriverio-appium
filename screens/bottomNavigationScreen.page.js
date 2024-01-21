@@ -14,6 +14,12 @@ class BottomNavigationScreen {
         return menuBtn;
     }
 
+    get watchlistBtn() {
+        let watchlistBtn = $("~WATCHLIST tab");
+        watchlistBtn.waitForDisplayed();
+        return watchlistBtn;
+    }
+
 }
 
 export default new BottomNavigationScreen();
