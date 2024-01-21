@@ -56,6 +56,7 @@ export const config = {
     capabilities: [{
         // capabilities for local Appium web tests on an Android Emulator
         platformName: 'Android',
+        "appium:deviceType": "phone",
         'appium:deviceName': 'Pixel 3a API 34',
         'appium:platformVersion': '14.0',
         'appium:automationName': 'UiAutomator2',
@@ -142,16 +143,22 @@ export const config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec',
-        ['allure', {
-            outputDir: 'allure-results',
-            disableWebdriverStepsReporting: false,
-            disableWebdriverScreenshotsReporting: false,
-        }],
-        [video, {
-            saveAllVideos: false,       // If true, also saves videos for successful test cases
-            videoSlowdownMultiplier: 3, // Higher to get slower videos, lower for faster videos [Value 1-100]
-        }]],
+    reporters: [
+        
+    //     [video, {
+    //     saveAllVideos: false,       // If true, also saves videos for successful test cases
+    //     videoSlowdownMultiplier: 3, // Higher to get slower videos, lower for faster videos [Value 1-100]
+    //     videoScale: '1200:trunc(ow/a/2)*2',
+    //     outputDir: 'videos',
+    //     videoRenderTimeout: 15000
+    //   }],
+
+      ['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: false,
+        disableWebdriverScreenshotsReporting: false
+      }],
+    ],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/

@@ -1,3 +1,4 @@
+import fs from 'fs';
 import MenuNavigationBarScreen from "../../screens/android/MenuNavigationBarScreen.js";
 import MenuScreen from "../../screens/android/MenuScreen.js";
 import BottomNavigationScreen from "../../screens/android/BottomNavigationScreen.page.js";
@@ -7,9 +8,28 @@ import SettingsScreen from "../../screens/android/SettingsScreen.js"
 import AlertScreen from "../../screens/android/AlertScreen.js";
 
 describe('Should Navigate To Settings > Restore Subscription and Validate Error Message ', () => {
+
   before(async () => {
+    // Start recording before the scenario
+    await driver.startRecordingScreen();
     await PopupOfferScreen.declineOfferIfVisible();
   });
+
+  after(async function () {
+    // Stop recording after the scenario
+    let video = await driver.stopRecordingScreen();
+
+    // Save the video to a file
+    fs.writeFileSync(`./videos/${this.currentTest.title}.mp4`, Buffer.from(video, 'base64'));
+    // comment above line and uncomment below to save video only if the scenario had a fail
+    /*
+    if (this.currentTest.state === 'failed') {
+      fs.writeFileSync(`./videos/${this.currentTest.title}.mp4`, Buffer.from(video, 'base64'));
+    }
+    */
+
+  });
+
 
   it('Should Navigate to home screen', async () => {
     expect(await HomeScreen.uniqueLocator).toBeDisplayed("Home screen is not visible");
@@ -30,7 +50,6 @@ describe('Should Navigate To Settings > Restore Subscription and Validate Error 
   it("Should throw an error while trying to restore subscriptions", async () => {
     await SettingsScreen.restoreSubscriptionButton.click();
     expect(AlertScreen.uniqueLocator).toBeDisplayed("Alert is not visible");
-
   });
 
   it("Should validate Error Message", async () => {

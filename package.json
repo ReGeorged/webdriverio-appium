@@ -13,6 +13,7 @@
     "appium": "^2.4.1",
     "appium-uiautomator2-driver": "^2.42.1",
     "ts-node": "^10.9.2",
+    "wdio-video-recorder": "^1.0.2",
     "wdio-video-reporter": "^5.1.1",
     "wdio-wait-for": "^3.0.10"
   },
