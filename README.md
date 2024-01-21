@@ -31,4 +31,6 @@ npx allure generate allure-results --clean
 ### P.S In this project i decided not to use typical POM design pattern as mocha assertions looked weird and the encapsulating functionality behind the pattern was not that much from this viewpoint
 
 ## WebdriverIO s VideoReporter did not work in this setup so i wrote my own implementation in RestorePurchasesAlert.e2e.js
-[TestRecording]<video src="videos/Alert%20should%20disappear%20after%20accepting%20it.mp4" controls title="Title"></video>
+
+
+# you can see the video here: [PathToTestRecording](./videos/Alert%20should%20disappear%20after%20accepting%20it.mp4)

@@ -24,7 +24,7 @@ describe('Should Navigate To Settings > Restore Subscription and Validate Error 
     // comment above line and uncomment below to save video only if the scenario had a fail
     /*
     if (this.currentTest.state === 'failed') {
-      fs.writeFileSync(`./videos/${this.currentTest.title}.mp4`, Buffer.from(video, 'base64'));
+      fs.writeFileSync(`./videos/failed/${this.currentTest.title}.mp4`, Buffer.from(video, 'base64'));
     }
     */
 
