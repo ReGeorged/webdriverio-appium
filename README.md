@@ -8,6 +8,9 @@ appium
 ```
 ## To run tests, run next coomand in root directory:
 ```
+# first install dependnecies:
+npm install
+# then run tests
 npx wdio
 ```
 
