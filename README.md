@@ -34,7 +34,7 @@ npx allure generate allure-results --clean
  the functional scenario approach is not BDD (like cucumber) but is still good of self documenting the test cases and scenarios </b>
 
 ## <u> WebdriverIO s VideoReporter did not work</u>
-   so i wrote my own implementation in [RestorePurchasesAlert test](./test\specs\android\RestorePurchasesAlert.e2e.js)
+   so i wrote my own implementation in [RestorePurchasesAlert test](./test/specs/android/RestorePurchasesAlert.e2e.js)
 
 
 # you can see the video here: [PathToTestRecording](./videos/Alert%20should%20disappear%20after%20accepting%20it.mp4)
