@@ -14,7 +14,7 @@ class PopupOfferScreen {
 
     async declineOfferIfVisible() {
         try {
-            await this.uniqueLocator.waitForDisplayed();
+            await this.uniqueLocator.waitForDisplayed(15000);
         } catch (error) {
             return;
         }
