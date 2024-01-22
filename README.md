@@ -6,7 +6,7 @@
 ```
 appium
 ```
-## To run tests, run next coomand in root directory:
+## To run tests, run next command in root directory:
 ```
 # first install dependnecies:
 npm install
